@@ -4,10 +4,7 @@ Motion X is an iOS application designed to capture and visualize device motion d
 
 The app also features the capability to send this data over a `WebSocket` connection to a specified server address and port.
 
-<video width="100%" max-height="500px" autoplay loop muted>
-  <source src="demo.mov" type="video/mp4" />
-  <source src="demo.png" type="image/png" />
-</video>
+https://github.com/LkxPro/Motion-X-iOS/assets/20046257/59233619-5f04-444b-8ef8-7bd83a953daa
 
 ## Features
 - **Real-Time Motion Data Capture:** Captures `roll`, `pitch`, `yaw` and `acceleration` data using Core Motion
@@ -15,26 +12,37 @@ The app also features the capability to send this data over a `WebSocket` connec
 
 - **WebSocket Communication:** Sends motion data to a server via `WebSocket` protocol.
 
-- **Data Visualization:** Displays the ootion data graphically in a line chart format.
+- **Data Visualization:** Displays the motion data graphically in a line chart format.
 
 - **User Interface:** Simple and intuitive interface for connecting to the server and displaying motion data.
 
 ## Installation
-Motion X iOS is currently yet uploaded to the App Store. We will need to build it from the source.
+Motion X iOS is currently not yet uploaded to the App Store. We will need to build it from the source.
 
 ## Build from source
-1. Clone the repository
-2. Open the Motion X.xcodeproj file in Xcode.
-3. Connect your iOS device to your computer.
-4. Select your device as the build destination in Xcode.
-5. Press the Run button to build and install the app on your device
+Clone the repository
 
-## Sent data to server
+    git clone https://github.com/LkxPro/Motion-X-iOS.git
+
+Open the `Motion X.xcodeproj` file in Xcode.
+
+Connect your iOS device to your computer.
+
+Select your device as the build destination in Xcode.
+
+Press the Run button to build and install the app on your device
+
+## Setting Up the Server
 Install Node.js
 
     brew install node
 
+Install WebSocket library
+
+    npm install ws
+
 Create a server.js file
+
 
 ```js
 const WebSocket = require('ws');
@@ -64,14 +72,11 @@ server.on('connection', (ws) => {
 
 ```
 
-Install WebSocket library
-
-    npm install ws
-
 Start server.js
 
-    server.js
+    npm server.js
+
+Enter the server address and port on the Motion X iOS App, then click 'Connect'. The server will now start receiving motion data.
 
 ## License
-Motion X is licensed under the [Apache License
- 2.0](LICENSE).
+Motion X iOS is licensed under the [Apache License 2.0](LICENSE).
