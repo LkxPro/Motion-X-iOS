@@ -74,7 +74,7 @@ server.on('connection', (ws) => {
 
 Start server.js
 
-    npm server.js
+    node server.js
 
 Enter the server address and port on the Motion X iOS App, then click 'Connect'. The server will now start receiving motion data.
 
